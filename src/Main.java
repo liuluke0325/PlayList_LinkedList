@@ -68,6 +68,7 @@ public class Main {
         System.out.println("2. Skip backwards to a previous song");
         System.out.println("3. Replay the current song");
         System.out.println("4. List the songs in the playlist");
+        System.out.println("5. Delete current song");
         System.out.println("0. Quit");
         System.out.println("----------------------------------");
 
@@ -162,6 +163,20 @@ public class Main {
 
                 case 4:
                     displaySong(list);
+                    break;
+                case 5 :
+                    if (list.size()>0){
+                    playlistIterator.remove();
+
+                    if (playlistIterator.hasNext()){
+                        System.out.println("Playing the next song "+playlistIterator.next().toString());
+                    }else if(playlistIterator.hasPrevious()){
+                        System.out.println("Playing the last song "+playlistIterator.previous().toString());
+                    }else{
+                        System.out.println("No more in the playlist");
+                    }
+                    }
+
                     break;
                 case 0:
                     flag = false;

@@ -30,6 +30,7 @@ public class Album {
             if (songArrayList.get(i).getTitle().equals(songName)) {
                 return i;
             }
+
         }
 
         return -1; // if can not find return -1
